@@ -1,9 +1,12 @@
-var express = require('express');
-var app = express();
+//format shift + option + f
+const express = require('express');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const app = express();
+passport.use(new GoogleStrategy);
+//clientid 398000189081-rudtgi3fvh3ogkhtsjmhu8sdhlvv1t50.apps.googleusercontent.com
+//clientsecret z4Gp94VuzpwwsynjfJfASPVy
 
-app.get('/', function (req, res) {
-  res.send('Hello World23333');
-});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
   console.log('Example app listening on port!');
